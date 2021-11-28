@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lx.springlx.mapper.TalkLookMapper">
+
+    <select id="querySysDeptByName" resultType="com.lx.springlx.pojo.SysDept">
+        select * from sys_dept where name =#{name}
+
+    </select>
+
+
+    <select id="queryTalkLookCountByDeptId" resultType="java.lang.Integer">
+        select count(*) from custom_look_history where dept_id =#{id}
+    </select>
+
+    <select id="queryDeptTypeByDeptId" resultType="java.lang.Integer">
+            select dept_id from sys_dept where dept_id =#{id}
+
+    </select>
+    <select id="queryDeptByParentId" resultType="java.lang.Integer">
+            select name from sys_dept where parent_id =#{parentId}
+    </select>
+    <select id="queryDeptByPlateId" resultType="java.lang.Integer"></select>
+
+    <select id="queryDeptByShopId" resultType="java.lang.Long">
+            select * from sys_dept where parent_id = #{parentId}
+    </select>
+
+
+
+
+
+
+
+
+
+
+
+
+    <select id="querySysDept" resultType="com.lx.springlx.pojo.SysDept">
+        select * from sys_dept where dept_id=#{dto.typeId} and dept_type=#{dto.type} and name = #{dto.deptName}
+    </select>
+    <select id="querySysDeptByPlateId" resultType="com.lx.springlx.pojo.SysDept">
+        select * from sys_dept where parent_id = #{dto.typeId}
+    </select>
+    <select id="querySysDeptById" resultType="com.lx.springlx.pojo.SysDept">
+         select * from sys_dept where parent_id = #{id}
+    </select>
+    <select id="querySysDeptByShopId" resultType="com.lx.springlx.pojo.SysDept">
+         select * from sys_dept where dept_id=#{id}
+    </select>
+
+
+</mapper>
