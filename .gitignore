@@ -36,3 +36,4 @@ pom.xml
 springlx.iml
 src/
 target/
+.idea/vcs.xml
