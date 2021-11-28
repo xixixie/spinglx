@@ -26,7 +26,11 @@ pipeline {
     stage('拉取代码') {
       steps {
           script {
-                gittools.checkout("${params.BRANCH_TAG}","${TARGET_URL}","001")
+              checkout([$class: 'GitSCM',
+                        branches: [[name: '*/devlop-gitee']],
+                        extensions: [],
+                        userRemoteConfigs: [[credentialsId: 'd4a9c355-441e-4e67-85ed-5d32da0d4f4c',
+                                             url: 'https://gitee.com/wcw19961023/test.git']]])
           }
       }
     }
