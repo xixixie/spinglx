@@ -32,6 +32,7 @@ hs_err_pid*
 .idea/misc.xml
 .idea/modules.xml
 .idea/uiDesigner.xml
+.idea/workspace.xml
 pom.xml
 springlx.iml
 src/
